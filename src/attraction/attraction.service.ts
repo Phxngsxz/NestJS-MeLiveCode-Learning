@@ -26,11 +26,18 @@ export class AttractionService {
     return this.attractionRepository.findOneBy({id: id})
   }
 
-  update(id: number, updateAttractionDto: UpdateAttractionDto) {
-    return `This action updates a #${id} attraction`;
+  async update(id: number, updateAttractionDto: UpdateAttractionDto) {
+    let attraction = await this.attractionRepository.findOneBy({id: id})
+    attraction = {
+      ...attraction,
+      ...updateAttractionDto
+    }
+    const toUpdate = await this.attractionRepository.save(attraction)
+    return toUpdate;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} attraction`;
+  async remove(id: number) {
+    const toDelete = await this.attractionRepository.delete(id)
+    return toDelete;
   }
 }
