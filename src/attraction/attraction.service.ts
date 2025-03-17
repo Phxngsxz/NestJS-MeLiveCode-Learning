@@ -19,11 +19,11 @@ export class AttractionService {
   }
 
   findAll() {
-    return `This action returns all attraction`;
+    return this.attractionRepository.find()  
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} attraction`;
+    return this.attractionRepository.findOneBy({id: id})
   }
 
   update(id: number, updateAttractionDto: UpdateAttractionDto) {
