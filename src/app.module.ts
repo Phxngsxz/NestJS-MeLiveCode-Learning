@@ -17,7 +17,8 @@ import { Attraction } from './attraction/entities/attraction.entity';
       entities: [Attraction],
       synchronize: true,
     }),
-    AttractionModule],
+    AttractionModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { TypeOrmModule } from '@nestjs/typeorm/dist';
 import { AttractionService } from './attraction.service';
 import { AttractionController } from './attraction.controller';
 import { Attraction } from './entities/attraction.entity';
